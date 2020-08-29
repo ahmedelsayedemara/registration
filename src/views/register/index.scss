@@ -1,0 +1,56 @@
+.register-layout {
+  background: white;
+  border-radius: 8px;
+  min-height: 100vh;
+  .register-right-side {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      background: $black-light;
+      z-index: 1;
+    }
+  }
+  .register-image {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: url(../../assets/images/room.jpg);
+    h1 {
+      z-index: 2;
+      color: white;
+      font-size: 34px;
+    }
+    p {
+      z-index: 2;
+      color: white;
+      font-size: 15px;
+      max-width: 270px;
+      text-align: center;
+    }
+  }
+  .register-form {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 959px) {
+  .register-layout {
+    .register-image {
+      position: static;
+    }
+  }
+}

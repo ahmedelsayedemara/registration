@@ -1,0 +1,47 @@
+.snackbar {
+  top: 25px;
+  right: 25px;
+  left: inherit;
+  ::v-deep .v-snack__wrapper {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+  }
+  ::v-deep .v-snack__content {
+    color: white;
+    font-weight: 500;
+  }
+
+  ::v-deep .v-snack-transition-leave-to {
+    transform: translateY(calc(-100% - 37px));
+  }
+
+  .close-btn {
+    width: 25px;
+    height: 25px;
+    background-color: white !important;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 20px;
+  }
+
+  .close-icon {
+    margin-top: 1px;
+  }
+}
+
+.error-color {
+  color: $danger-color !important;
+}
+
+.success-color {
+  color: $success-color !important;
+}
+
+.info-color {
+  color: $info-color !important;
+}
+
+.warning-color {
+  color: $warning-color !important;
+}

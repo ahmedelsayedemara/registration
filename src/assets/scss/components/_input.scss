@@ -1,0 +1,72 @@
+::v-deep {
+  .v-menu {
+    &__content {
+      border-radius: 25px;
+    }
+  }
+  .v-select__selections {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .v-text-field {
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .input-custom-style {
+    padding-top: 12px;
+    margin-top: 4px;
+  }
+}
+
+.v-menu {
+  &__content {
+    border-radius: 16px;
+    min-height: 48px;
+    border-radius: 12px;
+    background-color: white;
+    padding: 8px 0;
+    align-items: center;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .label {
+    font-size: 16;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+
+  input {
+    padding: 10px;
+    margin-top: 0;
+    max-height: 44px;
+    color: $gray-dark;
+    background-color: white;
+
+    &::placeholder {
+      color: $gray-dark;
+    }
+
+    &:focus {
+      // border-color: $primary-light-color;
+    }
+  }
+
+  .input-error {
+    background-color: white;
+
+    input {
+      border-color: $danger-color;
+      // caret-color: $second-color;
+
+      &:focus {
+        border-color: $danger-color;
+      }
+    }
+
+    .v-messages__message {
+      margin: 10px 0;
+      color: $danger-color;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.label {
+  font-size: 16px;
+  display: inline-block;
+  margin-bottom: 4px;
+  color: black;
+}
+
+::v-deep {
+  .v-list__tile__content {
+    text-align: right;
+    flex: none;
+  }
+  .text-field {
+    padding-top: 0;
+    margin-top: 0;
+
+    .v-input__control {
+      cursor: pointer;
+      &::before {
+        background-color: unset !important;
+      }
+      .v-input__slot {
+        &::before,
+        &::after {
+          display: none;
+        }
+        margin-bottom: 0;
+        border: 1px solid $gray-light;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 0;
+        max-height: 44px;
+        font-size: 15px;
+        color: black;
+        background-color: white;
+        box-shadow: none !important;
+        &::placeholder {
+          color: $gray-dark;
+        }
+
+        &:focus {
+          border-color: $primary-color;
+        }
+      }
+
+      .v-text-field__details {
+        .v-messages {
+          min-height: 14px;
+          flex: initial;
+
+          .v-messages__message {
+            color: $danger-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+::v-deep .input-disabled {
+  input {
+    background: $gray-dark;
+    border-color: $gray-dark;
+  }
+}
+::v-deep .input-error {
+  background-color: white;
+
+  .v-input__control {
+    .v-input__slot {
+      border-color: $danger-color;
+    }
+  }
+}
+
+::v-deep .v-list__tile__title {
+  text-transform: capitalize;
+}
+
+.dropdown-option-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+::v-deep {
+  .v-select {
+    &--is-menu-active {
+      .v-input {
+        &__append-inner {
+          border-left: 0 !important;
+        }
+      }
+    }
+  }
+
+  .v-overflow-btn {
+    &--editable {
+      &:hover {
+        .v-input {
+          &__append-inner {
+            border-left: 0 !important;
+          }
+        }
+      }
+      .v-input {
+        &--is-focused {
+          .v-input {
+            &__append-inner {
+              border-left: 0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

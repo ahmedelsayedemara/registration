@@ -1,0 +1,90 @@
+.register-layout {
+  background: white;
+  border-radius: 8px;
+  min-height: 100vh;
+  .register-right-side {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      background: $black-light;
+      z-index: 1;
+    }
+  }
+  .register-image {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: url(../../assets/images/room.jpg);
+    h1 {
+      z-index: 2;
+      color: white;
+      font-size: 34px;
+    }
+    p {
+      z-index: 2;
+      color: white;
+      font-size: 15px;
+      max-width: 270px;
+      text-align: center;
+    }
+  }
+  .activate-layout {
+    padding: 50px;
+    background: $white-light;
+    min-height: 100vh;
+    .logo {
+      width: 200px;
+      margin: 100px auto;
+    }
+    .active-user {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin: auto;
+      margin-bottom: 15px;
+      max-width: 500px;
+    }
+    .login-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+      .border-outline {
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid $gray-light;
+        min-width: 200px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 23px;
+        margin: 10px 20px;
+        &.active {
+          background:$gray-light;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 959px) {
+  .register-layout {
+    .register-image {
+      position: static;
+    }
+  }
+}

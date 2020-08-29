@@ -1,32 +1,59 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Alert />
+    <Loader />
+    <router-view />
   </div>
 </template>
 
+<script>
+import { mapActions } from "vuex";
+import axios from "axios";
+import { actionsTypes } from "@/store/modules/loader/types";
+
+export default {
+  created() {
+    this.enableInterceptor();
+  },
+  methods: {
+    ...mapActions({
+      showLoader: `loader/${actionsTypes.showLoader}`,
+      hideLoader: `loader/${actionsTypes.hideLoader}`,
+    }),
+    enableInterceptor() {
+      axios.interceptors.request.use(
+        (config) => {
+          this.showLoader();
+          return config;
+        },
+        (error) => {
+          this.isLoading = false;
+          return Promise.reject(error);
+        }
+      );
+
+      axios.interceptors.response.use(
+        (response) => {
+          this.hideLoader();
+          return response;
+        },
+        function(error) {
+          this.hideLoader();
+          return Promise.reject(error);
+        }
+      );
+    },
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
+  background: $primary-color;
+  direction: rtl;
+  font-family: $font-Cairo;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.text-left {
+  text-align: left;
 }
 </style>

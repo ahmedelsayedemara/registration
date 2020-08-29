@@ -1,0 +1,23 @@
+::v-deep {
+  .v-btn {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    &.btn-primary {
+      background: transparent !important;
+      box-shadow: none;
+      &:hover {
+        &::before {
+          background: transparent !important;
+        }
+        color: $primary-color;
+      }
+      .v-icon {
+        background: $primary-color;
+        color: white;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }
+  }
+}
